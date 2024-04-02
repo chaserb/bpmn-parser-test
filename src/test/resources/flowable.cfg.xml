@@ -28,8 +28,11 @@
     <bean id="processEngineConfiguration" class="org.flowable.engine.impl.cfg.StandaloneProcessEngineConfiguration">
         <property name="dataSource" ref="dataSource"/>
         <property name="databaseSchemaUpdate" value="drop-create" />
-        <property name="preBpmnParseHandlers" ref="preBpmnParser"/>
+        <property name="preBpmnParseHandlers">
+            <list>
+                <bean class="test.bpmn_parser.CustomPreParseHandler" />
+            </list>
+        </property>
     </bean>
 
-    <bean id="preBpmnParser" class="test.bpmn_parser.CustomPreParseHandler"/>
 </beans>
