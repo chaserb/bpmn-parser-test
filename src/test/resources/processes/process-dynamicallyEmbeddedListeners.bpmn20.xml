@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2024 Fastpath Solutions, LLC - All rights reserved.
+
+-->
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:flowable="http://flowable.org/bpmn" targetNamespace="http://www.flowable.org/processdef">
+    <process id="myProcessId" name="Do Groovy" isExecutable="true">
+        <startEvent id="myProcess-start" name="Start">
+            <extensionElements>
+                <flowable:eventType xmlns:flowable="http://flowable.org/bpmn">myEvent</flowable:eventType>
+            </extensionElements>
+        </startEvent>
+        <scriptTask id="myProcess-script" name="Run Groovy Script" scriptFormat="groovy">
+            <script><![CDATA[execution.setVariable("foo", "bar")]]></script>
+        </scriptTask>
+        <endEvent id="myProcess-end" name="End"/>
+        <sequenceFlow id="myProcess-flow1" sourceRef="myProcess-start" targetRef="myProcess-script"/>
+        <sequenceFlow id="myProcess-flow2" sourceRef="myProcess-script" targetRef="myProcess-end"/>
+    </process>
+</definitions>
