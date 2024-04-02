@@ -5,7 +5,7 @@ This is a test of the [BpmnParseHandler](https://github.com/flowable/flowable-en
 
 I put this repo together because I'm not able to register execution listeners with the BPMN Parse Handler, but I am able to do so with execution listener extensions coded into the BPMN XML. 
 
-Build the project with `mvn clean install` at the repo root, and you'll see there are two tests. The encoded BPMN XML test behaves as expected, but the dynamic extension registration fails to produce an execution listener. 
+Build the project with `mvn clean install` at the repo root, and you'll see there are [two tests](https://github.com/chaserb/bpmn-parser-test/blob/main/src/test/java/test/bpmn_parser/CustomParseHandlerTest.java). The encoded BPMN XML test behaves as expected, but the dynamic extension registration fails to produce an execution listener. 
 
 Here's a screencap from the debugger of the test that passes:
 ![successful execution listener registration](src/test/resources/misc/Debugger%20-%20Static%20Listener%20Extensions%20Are%20Translated%20to%20Runtime%20Listeners.png)
