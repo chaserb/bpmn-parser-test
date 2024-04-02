@@ -1,17 +1,12 @@
 package test.bpmn_parser;
 
 import org.flowable.engine.HistoryService;
-import org.flowable.engine.ProcessEngineConfiguration;
 import org.flowable.engine.RuntimeService;
-import org.flowable.engine.impl.cfg.ProcessEngineConfigurationImpl;
 import org.flowable.engine.runtime.ProcessInstance;
 import org.flowable.engine.test.Deployment;
 import org.flowable.engine.test.FlowableTest;
 import org.flowable.variable.api.history.HistoricVariableInstance;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -19,13 +14,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CustomParseHandlerTest {
 
     private static final String TENANT = "some.tenant";
-
-    @BeforeEach
-    void setup(final ProcessEngineConfiguration peConfig) {
-        if (peConfig instanceof final ProcessEngineConfigurationImpl impl) {
-            impl.setPostBpmnParseHandlers(List.of(new CustomPreParseHandler()));
-        }
-    }
 
     @Test
     @Deployment(tenantId = TENANT, resources = "processes/process-staticallyEmbeddedListeners.bpmn20.xml")
