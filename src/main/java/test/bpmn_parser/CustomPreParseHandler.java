@@ -25,8 +25,8 @@ import static org.flowable.engine.delegate.BaseExecutionListener.EVENTNAME_START
  * database.
  * <p/>
  * Think of this like an AOP cut-point where instead of updating all our XML
- * documents manually. This programmatically adds what we need at runtime
- * just before the documents are loaded into memory.
+ * documents manually, this programmatically adds what we need at runtime
+ * as the documents are loaded into memory.
  *
  * @author chasebarrett
  * @since 2024-03-24
