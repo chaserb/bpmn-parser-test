@@ -1,6 +1,3 @@
-/*
- * Copyright (C) 2024 Fastpath Solutions, LLC - All rights reserved.
- */
 package test.bpmn_parser;
 
 import org.flowable.engine.delegate.DelegateExecution;

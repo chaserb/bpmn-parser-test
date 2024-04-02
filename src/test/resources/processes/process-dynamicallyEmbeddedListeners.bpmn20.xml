@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-
-    Copyright (C) 2024 Fastpath Solutions, LLC - All rights reserved.
-
--->
 <definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:flowable="http://flowable.org/bpmn" targetNamespace="http://www.flowable.org/processdef">
     <process id="myProcessId" name="Do Groovy" isExecutable="true">
         <startEvent id="myProcess-start" name="Start">
